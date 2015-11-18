@@ -4,7 +4,7 @@ var Player = function(name,dice)
   this.name = name;
   this.dice = dice;
 };
-var Tile = function(row,cols){
+var Tile = function(rows,cols){
   this.rows = rows;
   this.cols = cols;
 };
@@ -19,15 +19,16 @@ var Board = function(rows , cols){
         this.tiles.push(new Tile(i,j));
   };
   this.drawBoard = function(){ //function to Draw the board with tiles on HTML
-    console.log(this.tiles)
-  // for(var i = 0; i< this.tiles.length; i++){
-  //     tileDiv = document.createElement('div'); //creating div element
-  //     tileDiv.className = ('tile'); //setting class name
-  //     tileDiv.innerHTML = '<span>' + "hi" + '</span>'
-  //     tileDiv.addEventListener('click', function(event){
-  //       document.body.appendChild(tileDiv);
-  //     });
-  // }
+    console.log(this.tiles);
+  for(var i = 0; i< this.tiles.length; i++){
+      tileDiv = document.createElement('div'); //creating div element
+      tileDiv.className = ('tile'); //setting class name
+      tileDiv.innerHTML = '<span>' + "hi" + '</span>';
+      tileDiv.addEventListener('click', function(event){
+        //document.body.appendChild(tileDiv);
+      });
+    document.body.appendChild(tileDiv);
+  }
   };
 };
 window.onload = function(){
@@ -35,5 +36,6 @@ window.onload = function(){
   playerOne = new Player("Surya","X");
   playerTwo = new Player("Priya","O");
   board = new Board(3,3);
+  board.init();
   board.drawBoard();
 };
