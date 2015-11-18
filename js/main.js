@@ -6,19 +6,24 @@ var Player = function(name,dice)
 };
 
 // Object to take the parameters and create a Board with tiles
-//window.onload() = function(rows = 3, columns = 3)
-window.onload = function(){
-alert("hi");
-  this.rows = 3;
-	this.cols = 4;
+var Boards = function(rows , columns)
+{
+	this.rows = rows;
+	this.cols = columns;
   //function to draw tiles
-  //this.drawTiles(){
+  this.drawTiles = function()
+	{
 		for(var i = 0; i< rows;row++){
 			for(var j = 0; j< cols; cols++){
-          div = document.createElement('div');
-          div.classname = 'tile'
+        div = document.createElement('div');
+        div.classname = 'tile';
+        document.body.appendChild(div);
 
 			}
 		}
-	//}
+	}
 };
+window.onload = function (){
+  var board = new board();
+  board.drawTiles;
+}
