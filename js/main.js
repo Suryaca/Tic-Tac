@@ -19,7 +19,7 @@ var Board = function(rows , cols){
         this.tiles.push(new Tile(i,j));
   };
   this.drawBoard = function(){ //function to Draw the board with tiles on HTML
-    console.log()
+    console.log(this.tiles)
   // for(var i = 0; i< this.tiles.length; i++){
   //     tileDiv = document.createElement('div'); //creating div element
   //     tileDiv.className = ('tile'); //setting class name
@@ -28,7 +28,7 @@ var Board = function(rows , cols){
   //       document.body.appendChild(tileDiv);
   //     });
   // }
-  // };
+  };
 };
 window.onload = function(){
 
@@ -36,5 +36,4 @@ window.onload = function(){
   playerTwo = new Player("Priya","O");
   board = new Board(3,3);
   board.drawBoard();
-
 };
